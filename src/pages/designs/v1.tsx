@@ -1,18 +1,18 @@
 import { type NextPage } from "next";
+import CardV1 from "~/components/cardV1";
 import { api } from "~/utils/api";
 
 const V1Page: NextPage = () => {
   const { data: shoes } = api.shoes.all.useQuery();
-  console.log(shoes);
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <h1>Designs</h1>
-      {shoes?.map((shoe) => (
-        <div key={shoe.id}>
-          <h2>{shoe.brand}</h2>
-          <p>{shoe.model}</p>
+    <div className="flex h-screen items-center justify-center bg-neutral-900">
+      {shoes?.length && (
+        <div className="grid grid-cols-3 gap-16">
+          <CardV1 shoe={shoes[0]!} />
+          <CardV1 shoe={shoes[1]!} />
+          <CardV1 shoe={shoes[2]!} />
         </div>
-      ))}
+      )}
     </div>
   );
 };

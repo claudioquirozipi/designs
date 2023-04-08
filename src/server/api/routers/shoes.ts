@@ -6,95 +6,47 @@ import {
   protectedProcedure,
 } from "~/server/api/trpc";
 
-interface Shoe {
-  id: string;
+export interface Shoe {
+  id: number;
   brand: string;
   model: string;
-  size: number;
-  color: string;
+  size: number[];
+  color: string[];
+  background: string;
   price: number;
+  image: string;
 }
 
 const shoes: Shoe[] = [
   {
-    id: "1",
+    id: 1,
     brand: "Nike",
-    model: "Air Max 90",
-    size: 10,
-    color: "White/Black",
+    model: "Air Max 270 React",
+    size: [8, 9, 10, 11, 12],
+    color: ["blue", "red", "green"],
+    background: "blue",
     price: 120,
+    image: "/shoes/blue.png",
   },
   {
-    id: "2",
-    brand: "Adidas",
-    model: "Ultraboost",
-    size: 9,
-    color: "Grey/Black",
+    id: 2,
+    brand: "Nike",
+    model: "Zoom Pegasus 38",
+    size: [8, 9, 10, 11, 12],
+    color: ["blue", "red", "green"],
+    background: "green",
     price: 180,
+    image: "/shoes/green.png",
   },
   {
-    id: "3",
-    brand: "Reebok",
-    model: "Club C 85",
-    size: 8,
-    color: "White/Green",
+    id: 3,
+    brand: "Nike",
+    model: "Dunk Low",
+    size: [8, 9, 10, 11, 12],
+    color: ["blue", "red", "green"],
+    background: "red",
     price: 75,
-  },
-  {
-    id: "4",
-    brand: "New Balance",
-    model: "990v5",
-    size: 10.5,
-    color: "Grey",
-    price: 175,
-  },
-  {
-    id: "5",
-    brand: "Puma",
-    model: "Suede Classic",
-    size: 11,
-    color: "Black/White",
-    price: 65,
-  },
-  {
-    id: "6",
-    brand: "Vans",
-    model: "Old Skool",
-    size: 8.5,
-    color: "Red/White",
-    price: 60,
-  },
-  {
-    id: "7",
-    brand: "Converse",
-    model: "Chuck Taylor All Star",
-    size: 7,
-    color: "Black",
-    price: 55,
-  },
-  {
-    id: "8",
-    brand: "Fila",
-    model: "Disruptor 2",
-    size: 9.5,
-    color: "White/Navy",
-    price: 75,
-  },
-  {
-    id: "9",
-    brand: "Timberland",
-    model: "6-Inch Premium Waterproof Boots",
-    size: 10,
-    color: "Wheat",
-    price: 190,
-  },
-  {
-    id: "10",
-    brand: "Dr. Martens",
-    model: "1460",
-    size: 8,
-    color: "Black",
-    price: 150,
+    image: "/shoes/red.png",
   },
 ];
 
