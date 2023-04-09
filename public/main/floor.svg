@@ -1,0 +1,15 @@
+<svg 
+    version="1.1" 
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="100px" height="100px" 
+    viewBox="0 0 100 100">
+    <g filter="drop-shadow(0 0 20px #FF00E4)" stroke="#FF00E4" stroke-width="3">
+        <line x1="0" y1="50" x2="100" y2="50" ></line>
+        <line x1="50" y1="0" x2="50" y2="100" ></line>
+    </g>
+      <g filter="drop-shadow(0 0 0.5rem #fff)" stroke="#fff" stroke-width="1">
+        <line x1="0" y1="50" x2="100" y2="50" ></line>
+        <line x1="50" y1="0" x2="50" y2="100" ></line>
+    </g>
+</svg>
