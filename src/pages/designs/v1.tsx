@@ -8,9 +8,9 @@ const V1Page: NextPage = () => {
     <div className="flex h-screen items-center justify-center bg-neutral-900">
       {shoes?.length && (
         <div className="grid grid-cols-3 gap-16">
-          <CardV1 shoe={shoes[0]!} />
-          <CardV1 shoe={shoes[1]!} />
-          <CardV1 shoe={shoes[2]!} />
+          {shoes.map((shoe, i) => (
+            <CardV1 key={i} shoe={shoe} />
+          ))}
         </div>
       )}
     </div>

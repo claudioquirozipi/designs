@@ -1,4 +1,4 @@
-import { MainProps } from "./interface";
+import { type MainProps } from "./interface";
 import Link from "next/link";
 import styles from "./styles.module.css";
 

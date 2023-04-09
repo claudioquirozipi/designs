@@ -1,15 +1,18 @@
-import { CardV1Props } from "./interface";
+import { type CardV1Props } from "./interface";
+import Image from "next/image";
 import styles from "./styles.module.css";
 
 export function CardV1(props: CardV1Props) {
   const { size, image, color, background, brand, model } = props.shoe;
+
   return (
     <div
-      className={`${styles[background] || ""} ${styles.card}`}
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      className={`${styles[background]} ${styles.card}`}
       data-content={brand}
     >
       <div className={styles.imgBx}>
-        <img src={image} alt="" />
+        <Image src={image} alt="" width={300} height={300} />
       </div>
       <div className={styles.contentBx}>
         <h2>{model}</h2>

@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-function Main(props: any) {
+function Main() {
   return (
     <main>
       <h1>otra página</h1>
