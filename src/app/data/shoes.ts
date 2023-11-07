@@ -1,5 +1,3 @@
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
-
 export interface Shoe {
   id: number;
   brand: string;
@@ -44,8 +42,4 @@ const shoes: Shoe[] = [
   },
 ];
 
-export const shoesRouter = createTRPCRouter({
-  all: publicProcedure.query(() => {
-    return shoes;
-  }),
-});
+export default shoes;

@@ -1,13 +1,30 @@
-import { type CardV1Props } from "./interface";
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./styles.module.css";
+import Image from "next/image";
+import shoes from "../data/shoes";
+import type { Shoe } from "../data/shoes";
 
-export function CardV1(props: CardV1Props) {
-  const { size, image, color, background, brand, model } = props.shoe;
+export default function Shoes() {
+  return (
+    <div className="flex h-screen items-center justify-center bg-neutral-900">
+      {shoes?.length && (
+        <div className="grid grid-cols-3 gap-16">
+          {shoes.map((shoe, i) => (
+            <Card key={i} shoe={shoe} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
+interface CardProps {
+  shoe: Shoe;
+}
+function Card(cardProps: CardProps) {
+  const { brand, model, size, color, image, background } = cardProps.shoe;
   return (
     <div
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       className={`${styles[background]} ${styles.card}`}
       data-content={brand}
     >
@@ -33,5 +50,3 @@ export function CardV1(props: CardV1Props) {
     </div>
   );
 }
-
-export default CardV1;
