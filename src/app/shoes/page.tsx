@@ -6,9 +6,9 @@ import type { Shoe } from "../data/shoes";
 
 export default function Shoes() {
   return (
-    <div className="flex h-screen items-center justify-center bg-neutral-900">
+    <div className="flex min-h-screen items-center justify-center bg-neutral-900 py-8">
       {shoes?.length && (
-        <div className="grid grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {shoes.map((shoe, i) => (
             <Card key={i} shoe={shoe} />
           ))}
